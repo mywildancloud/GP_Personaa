@@ -1,0 +1,205 @@
+/*
+ Theme Name:   GP Personaa
+ Theme URI:    https://generatepress.com
+ Description:  beautiful personal site with instan checkout ecommerce.
+ Author:       Wildan Nursahidan
+ Author URI:   https://mywildan.cloud
+ Template:     generatepress
+ Version:      1.0.0
+*/
+
+/* Right breakout Elements */
+.break-out {
+	display:inline-flex;
+	position:absolute;
+	top:0;
+	height:100%;
+	margin-top:80px;
+	padding-bottom:auto;
+}
+.break-out img {
+	height:100%;
+	object-fit:cover;
+	object-position:top left;
+	border-radius: 8px 0 0 8px;
+}
+@media (max-width:1080px) {
+	.break-out {
+		position:static;
+	}
+}
+
+/* header navigation space-between elements */
+@media (min-width:1024px) {
+	.nav-float-right #site-navigation {
+  		margin-left: 15%;
+	}
+	.main-navigation {
+		width: 100%;
+	}
+#primary-menu {
+	width: 100%;
+	}
+	.main-navigation li:last-child{
+		margin-left: auto;
+	}
+	.main-navigation li:first-child{
+		margin-left: auto;
+	}
+}
+
+.main-navigation .main-nav ul li:last-child a {
+	color:#FFF !important;
+	background-color: var(--accent);
+	border-radius: 20px;
+}
+
+.main-navigation .main-nav ul li:last-child a:hover{
+	color: var(--accent) !important;
+	background-color: transparent;
+	border-radius: 20px;
+	border:solid 2px var(--accent);
+}
+
+@media (max-width:768px) {
+	.main-nav {
+		margin-top:80px;
+	}
+	.slideout-navigation.do-overlay .slideout-exit {
+		position:absolute !important;
+		background: var(--accent);
+    	color: #FFF;
+	}
+}
+
+/* animated button gradient */
+.btn-gradient {
+	border-radius:20px;
+	color:#FFF !important;
+	background: linear-gradient(190deg, #4338ca, #818cf8);
+	background-size: 200% 200%;
+	-webkit-animation: btn-gradient 10s ease infinite;
+	-moz-animation: btn-gradient 10s ease infinite;
+	-o-animation: btn-gradient 10s ease infinite;
+	animation: btn-gradient 10s ease infinite;
+}
+	@-webkit-keyframes btn-gradient {
+		0%{background-position:49% 0%}
+		50%{background-position:52% 100%}
+		100%{background-position:49% 0%}
+	}
+	@-moz-keyframes btn-gradient {
+		0%{background-position:49% 0%}
+		50%{background-position:52% 100%}
+		100%{background-position:49% 0%}
+	}
+	@-o-keyframes btn-gradient {
+		0%{background-position:49% 0%}
+		50%{background-position:52% 100%}
+		100%{background-position:49% 0%}
+	}
+	@keyframes btn-gradient {
+		0%{background-position:49% 0%}
+		50%{background-position:52% 100%}
+		100%{background-position:49% 0%}
+	}
+
+.btn-gradient svg {
+	width:12px;
+	height:auto;
+}
+
+/* Animated Gemini Text Color Gradient */
+.gemini {
+	background:radial-gradient(circle, #4338ca,#818cf8,#ea580c);
+	background-clip:text;
+	color:transparent;
+	font-weight:bold;
+	animation: gemini 5s linear infinite;
+	background-size:200% 200%;
+}
+@keyframes gemini {
+	0% {
+		background-position:0% 0%;
+	}
+	50% {
+		background-position:100% 100%;
+	}
+	100% {
+		background-position:0% 0%;
+	}
+}
+
+/* Site Wrapper */
+.site-wrapper {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+}
+
+/* aspect ratio image and video */
+.ar-16-9 {
+    aspect-ratio: 16/9;
+}
+
+.ar-9-16 {
+    aspect-ratio: 9/16;
+}
+
+.ar-4-3 {
+    aspect-ratio: 4/3;
+}
+
+.ar-1-1 {
+	aspect-ratio: 1/1;
+}
+
+/* Tweak of css */
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.no-ul, .no-ul a {
+	text-decoration: none;
+}
+
+.gb-container p:last-child:last-of-type {
+    margin-bottom: 0px;
+}
+
+.block-editor-block-list__layout .gb-container p:nth-last-child(2) {
+    margin-bottom: 0px;
+}
+
+/* Pseudo Element */
+.accent-lines::before, .accent-lines::after {
+    content: '';
+    width: 40px;
+    border-bottom: 1px solid var(--base);
+    margin: auto;
+}
+.accent-lines::after {
+    margin-left: .5em;
+}
+.accent-lines::before {
+    margin-right: .5em;
+}
+
+/* automatic darkmode by system */
+@media (prefers-color-scheme: dark) {
+:root {
+    --contrast:#222222;
+    --contrast-2:#27272A;
+    --contrast-3:#A1A1AA;
+    --base:#FAFAFA;
+    --base-2:#FFFFFF;
+    --base-3:#E9F2F9;
+    --accent:#4F46E5;
+	}
+}
