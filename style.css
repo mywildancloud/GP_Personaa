@@ -29,6 +29,12 @@
 	}
 }
 
+@media (max-width:768px) {
+	.break-out img {
+		min-width:130vw;
+	}
+}
+
 /* header navigation space-between elements */
 @media (min-width:1024px) {
 	.nav-float-right #site-navigation {
