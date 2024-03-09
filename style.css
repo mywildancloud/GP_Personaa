@@ -23,7 +23,7 @@
 	object-position:top left;
 	border-radius: 8px 0 0 8px;
 }
-@media (max-width:1080px) {
+@media (max-width:1024px) {
 	.break-out {
 		position:static;
 	}
