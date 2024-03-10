@@ -8,6 +8,58 @@
  Version:      1.0.0
 */
 
+/* Animated icon scrolling down effect */
+.wrapper-mouse {
+	border:2px solid var(--base);
+	border-radius:16px;
+	width:24px;
+	height:40px;
+	display:block;
+	margin-top:24px;
+	margin-bottom:24px;
+}
+.mouse-scroll {
+	display:absolute;
+	margin-top:-20px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:2px;
+	width:3px;
+	height:16px;
+	background: var(--base);
+	border-radius: 5px;
+	-webkit-animation: 1.5s ease infinite wheel-up-down;
+	animation: 1.5s ease infinite wheel-up-down;
+}
+
+@-webkit-keyframes wheel-up-down {
+0% {
+	opacity: 0;
+}
+30% {
+	opacity: 1;
+}
+100% {
+	-webkit-transform: translateY(18px);
+	transform: translateY(18px);
+	opacity: 0;
+}
+}
+
+@keyframes wheel-up-down {
+0% {
+	opacity: 0;
+}
+30% {
+	opacity: 1;
+}
+100% {
+	-webkit-transform: translateY(18px);
+	transform: translateY(18px);
+	opacity: 0;
+}
+}
+
 /* Glassmorphism Blur effect Menu Sticky on Mobile */
 .sticky-enabled .main-navigation.is_stuck {
 	background-color:var(--base) .5%;
