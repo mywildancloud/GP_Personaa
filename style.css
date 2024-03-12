@@ -10,7 +10,7 @@
 
 /* Animated icon scrolling down effect */
 .wrapper-mouse {
-	border:2px solid var();
+	border:2px solid var(--lighter);
 	border-radius:16px;
 	width:24px;
 	height:40px;
@@ -25,7 +25,7 @@
 	padding:2px;
 	width:3px;
 	height:16px;
-	background: var();
+	background: var(--lighter);
 	border-radius: 5px;
 	-webkit-animation: 1.5s ease infinite wheel-up-down;
 	animation: 1.5s ease infinite wheel-up-down;
