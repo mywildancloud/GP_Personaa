@@ -62,10 +62,10 @@ add_filter( 'generate_svg_icon', function( $output, $icon ) {
 add_action('wp_footer', function() {
 ?>
 <script>
-function colorModeSwitcher() {
-  var element = document.body;
-  element.classList.toggle("light");
-}
+	function colorModeSwitcher() {
+	  var element = document.getElementById("c-light-mode");
+  	document.body.classList.toggle("light");
+		}
 		// Dark Mode
 	var cookieStorage = {
 	    setCookie: function setCookie(key, value, time, path) {
@@ -89,9 +89,9 @@ function colorModeSwitcher() {
 	jQuery('.c-light-mode').click(function() {
 	    //Show either moon or sun
 	    jQuery('.c-light-mode').toggleClass('active');
-	    //If light mode is selected
+	    //If dark mode is selected
 	    if (jQuery('.c-light-mode').hasClass('active')) {
-	        //Add light mode class to the body
+	        //Add dark mode class to the body
 	        jQuery('body').addClass('light');
 	        cookieStorage.setCookie('dark', 'true', 2628000000, '/');
 	    } else {
