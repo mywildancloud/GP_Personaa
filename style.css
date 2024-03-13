@@ -5,12 +5,12 @@
  Author:       Wildan Nursahidan
  Author URI:   https://mywildan.cloud
  Template:     generatepress
- Version:      1.0.1
+ Version:      1.0.2
 */
 
 /* Animated icon scrolling down effect */
 .wrapper-mouse {
-	border:2px solid var(--lighter);
+	border:2px solid var();
 	border-radius:16px;
 	width:24px;
 	height:40px;
@@ -25,7 +25,7 @@
 	padding:2px;
 	width:3px;
 	height:16px;
-	background: var(--lighter);
+	background: var();
 	border-radius: 5px;
 	-webkit-animation: 1.5s ease infinite wheel-up-down;
 	animation: 1.5s ease infinite wheel-up-down;
@@ -59,13 +59,6 @@
 }
 }
 
-/* Glassmorphism Blur effect Menu Sticky on Mobile */
-.sticky-enabled .main-navigation.is_stuck {
-	background-color:var(--bg-color) .5%;
-  	-webkit-backdrop-filter: blur(5px);
-  	backdrop-filter: blur(5px);
-}
-
 /* Right breakout Elements */
 .break-out {
 	display:inline-flex;
@@ -84,6 +77,7 @@
 @media (max-width:1024px) {
 	.break-out {
 		position:static;
+		height:auto;
 	}
 }
 
@@ -183,8 +177,28 @@
 }
 
 /* Animated Gemini Text Color Gradient */
-.gemini {
-	background:radial-gradient(circle, #4338ca,#818cf8,#ea580c);
+body .gemini {
+	background:radial-gradient(circle, #fcd34d,#b45309,#fbbf24);
+	background-clip:text;
+	color:transparent;
+	font-weight:bold;
+	animation: gemini 5s linear infinite;
+	background-size:200% 200%;
+}
+@keyframes gemini {
+	0% {
+		background-position:0% 0%;
+	}
+	50% {
+		background-position:100% 100%;
+	}
+	100% {
+		background-position:0% 0%;
+	}
+}
+
+body.light .gemini {
+	background:radial-gradient(circle,#4f46e5,#818cf8,#4338ca);
 	background-clip:text;
 	color:transparent;
 	font-weight:bold;
@@ -247,7 +261,7 @@
     margin-right: .5em;
 }
 
-/* button switcher dark/light */
+/* button dark mode switcher */
 .c-light-mode {
 	width: 24px;
 	height: 24px;
@@ -272,10 +286,73 @@ g#sun{
 	opacity: 0;
 }
 
-.light h1, .light h2, .light h3, .light h4, .light h5, .light h6, .light p, .light a, .light div, .light.site-content {
-	background-color:var(--text-color);
-	color:var(--bg-color);
+/* dark mode style */
+:root {
+    --darker: #222222;
+    --bg-color: #272727;
+    --cards: #FAFAFA;
+    --text-color: #FFFFFF;
+    --lighter: #A1A1AA;
+    --accent: #4F46E5;
+	--heading:#fcd34d;
+	--cards-h:#333333;
+	--cards-p:#1e293b;
+	--bg-color-light: #FFFFFF;
+    --text-color-light: #272727;
+	--heading-light:#333333;
 }
-.light {
-	transition: .2s all ease-in;
+body {
+	background:var(--bg-color);
+	color:var(--text-color);
+}
+body .inside-navigation {
+	background:var(--darker);
+}
+body .cards {
+	background:var(--cards);
+}
+body .cards .cards-h {
+	color:var(--cards-h);
+}
+body .cards .cards-p {
+	color:var(--cards-p);
+	font-weight:lighter;
+}
+body h1,h2,h3,h4,h5,h6 {
+	color:var(--heading);
+}
+body a {
+	color:var(--text-color);
+}
+body.light {
+	background:var(--bg-color-light);
+	color:var(--text-color-light);
+}
+body.light h1,h2,h3,h4,h5,h6 {
+	color:var(--heading-light);
+}
+body.light a {
+	color:var(--text-color-light);
+}
+body.light button.menu-toggle {
+	color:var(--text-color-light);
+	background-color:transparent;
+}
+body.light .inside-navigation {
+	background:#FFF;
+}
+
+@media (min-width:883px) {
+	body .inside-navigation {
+		background:transparent;
+	}
+	body.light .inside-navigation {
+		background:transparent;
+	}
+}
+body .site-footer {
+	background:var(--darker);
+}
+body.light .site-footer {
+	background:var(--cards);
 }
