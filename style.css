@@ -305,6 +305,9 @@ body {
 	background:var(--bg-color);
 	color:var(--text-color);
 }
+body p {
+	color:var(--lighter);
+}
 body .inside-navigation {
 	background:var(--darker);
 }
@@ -316,7 +319,6 @@ body .cards .cards-h {
 }
 body .cards .cards-p {
 	color:var(--cards-p);
-	font-weight:lighter;
 }
 body h1,h2,h3,h4,h5,h6 {
 	color:var(--heading);
@@ -355,4 +357,7 @@ body .site-footer {
 }
 body.light .site-footer {
 	background:var(--cards);
+}
+body.light p {
+	color:var(--text-color-light)
 }
