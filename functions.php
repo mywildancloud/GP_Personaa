@@ -22,6 +22,12 @@ add_filter('block_editor_settings_all', function($editor_settings) {
     return $editor_settings;
 });
 
+// * Remove submenu patterns *//
+function myw_remove_appearance_submenus() {
+    remove_submenu_page('themes.php', 'site-editor.php?path=/patterns');
+}
+add_action('admin_menu', 'myw_remove_appearance_submenus', 999);
+
 /* Eunqueue Customizer CSS to editor */ 
 add_filter( 'block_editor_settings_all', function( $editor_settings ) {
     $css = wp_get_custom_css_post()->post_content;
